@@ -78,7 +78,7 @@ export const sendContactMail = async(
         console.log(error);
 
         res.status(500).json({
-
+            
             message:"Mail sending failed"
 
         });
