@@ -36,31 +36,20 @@ export const sendContactMail = async(
 
 
             subject:`New Contact Message from ${name}`,
-
-
             html:`
-
             <h2>New Contact Request</h2>
-
             <p>
             <b>Name:</b> ${name}
             </p>
-
-
             <p>
             <b>Email:</b> ${email}
             </p>
-
-
             <p>
             <b>Message:</b>
             </p>
-
-
             <p>
             ${message}
             </p>
-
             `
 
         });

@@ -26,14 +26,13 @@ import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 465,
-  secure: true, // Port 465 ke liye true
+  port: 587,
+  secure: false, // Port 587 ke liye false (STARTTLS)
   auth: {
     user: process.env.SMTP_EMAIL,
-    pass: process.env.SMTP_PASSWORD, // Make sure ye App Password ho!
+    pass: process.env.SMTP_PASSWORD, // Must be an 16-character App Password
   },
-  // 🔥 YE LINE PRODUCTION KA ISSUE FIX KAREGI
-  family: 4, 
+  family: 4, // Bypasses IPv6 issue on Render
 } as nodemailer.TransportOptions);
 
 export default transporter;
